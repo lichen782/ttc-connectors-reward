@@ -15,7 +15,7 @@ global:
     url: ""
 javaOpts:
   xmx: 1024m
-  xms: 768Mi
+  xms: 768m
   other: -XX:+UnlockExperimentalVMOptions -Dsun.zip.disableMemoryMapping=true -XX:+UseParallelGC -XX:MinHeapFreeRatio=5 -XX:MaxHeapFreeRatio=10 -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90
 image:
   repository: draft
