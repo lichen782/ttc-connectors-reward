@@ -10,7 +10,7 @@ pipeline {
             }
     }
     environment {
-      ORG               = 'activiti'
+      ORG               = 'lichen782'
       APP_NAME          = 'ttc-connectors-reward'
       CHARTMUSEUM_CREDS = credentials('jenkins-x-chartmuseum')
     }
@@ -57,7 +57,7 @@ pipeline {
 
             sh 'export VERSION=`cat VERSION` && skaffold build -f skaffold.yaml'
             sh "jx step post build --image $DOCKER_REGISTRY/$ORG/$APP_NAME:\$(cat VERSION)"
-            sh './updatebot.sh'
+            // sh './updatebot.sh'
           }
         }
       }

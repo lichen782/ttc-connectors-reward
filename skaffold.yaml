@@ -3,7 +3,7 @@ kind: Config
 build:
   tagPolicy:
     envTemplate:
-      template: "{{.DOCKER_REGISTRY}}/activiti/ttc-connectors-reward:{{.VERSION}}"
+      template: "{{.DOCKER_REGISTRY}}/lichen782/ttc-connectors-reward:{{.VERSION}}"
   artifacts:
   - imageName: changeme
     workspace: .
@@ -17,9 +17,7 @@ profiles:
   build:
     tagPolicy:
       envTemplate:
-        template: "{{.DOCKER_REGISTRY}}/activiti/ttc-connectors-reward:{{.DIGEST_HEX}}"
-    artifacts:
-    - docker: {}
+        template: "{{.DOCKER_REGISTRY}}/lichen782/ttc-connectors-reward:{{.DIGEST_HEX}}"
     local: {}
   deploy:
     helm:
@@ -27,5 +25,5 @@ profiles:
       - name: ttc-connectors-reward
         chartPath: charts/ttc-connectors-reward
         setValueTemplates:
-          image.repository: "{{.DOCKER_REGISTRY}}/activiti/ttc-connectors-reward"
+          image.repository: "{{.DOCKER_REGISTRY}}/lichen782/ttc-connectors-reward"
           image.tag: "{{.TAG}}"
